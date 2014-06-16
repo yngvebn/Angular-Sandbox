@@ -1,1 +1,1 @@
-angular.module('sandbox', []);
+angular.module('sandbox', ['ngRoute']);

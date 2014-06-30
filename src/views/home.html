@@ -1,1 +1,12 @@
 <div>Greeted with "Controller As"-syntax: {{ home.greeting }}</div>
+
+    	<select ng-model="search.section">
+            <option value="1">For Sale</option>
+            <option value="2">For Rent</option>
+        </select>
+        <select ng-model="home.minPrice" ng-options="price.value for price in home.price_filters | filter:search:strict">
+            <option>Min Price</option>
+        </select>
+        <select  ng-model="home.maxPrice" ng-options="price.value for price in home.price_filters | filter:search:strict">
+            <option>Max Price</option>
+        </select>

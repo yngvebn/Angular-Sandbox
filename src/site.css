@@ -1,0 +1,74 @@
+* {
+	box-sizing: border-box;
+}
+
+body{
+	font-family: helvetica;
+	font-size: 14px;
+}
+
+.nav{
+	list-style-type: none;
+	clear: right;
+	overflow: hidden;
+}
+
+.nav-item{
+	float: left;
+	margin-right: 15px;
+}
+
+
+.calendar {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+.calendar-item{
+	padding: 4px;
+}
+
+.calendar-header{
+	width: 14.2857%;
+	float: left;
+}
+
+.calendar-day{
+	opacity: 0.4;
+	height: 120px;
+	width: 14.2857%;
+	float: left;
+	background-color:#fefefe;
+	border-bottom: 1px solid #aaa;
+	border-right: 1px solid #aaa;	
+	cursor:pointer;
+
+    -webkit-transition: background-color 300ms linear;
+    -moz-transition: background-color 300ms linear;
+    -o-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+}
+.calendar-day:hover{
+	background-color:#f1f1f1;
+
+}
+.calendar-day:nth-child(1){
+	border-left: 1px solid #aaa;
+}
+
+.calendar-day:nth-child(-n+7){
+	border-top: 1px solid #aaa;
+}
+
+.calendar-day:nth-child(7n+1){
+	border-left: 1px solid #aaa;
+}
+
+
+
+.calendar-day.currentMonth{
+	opacity: 1;
+}

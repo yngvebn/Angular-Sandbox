@@ -5,9 +5,17 @@
 </head>
 	<script type="text/javascript" src="lib\angular.js"></script>
 	<script type="text/javascript" src="lib\angular-route.js"></script>
+	<script type="text/javascript" src="lib\moment.js"></script>
 	<script type="text/javascript" src="lib\lodash.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="site.css">
 <body ng-app="sandbox">
+	<div ng-controller="Menu as menu">
+		<ul class='nav'>
+			<li ng-repeat="item in menu.items" class='nav-item'>
+				<a ng-href="#{{item.url}}">{{item.name}}</a>
+			</li>
+		</ul>
+	</div>
 	<div ng-view>
 			
 	</div>
@@ -15,6 +23,9 @@
 	<script type="text/javascript" src="app\app.js"></script>
 	<script type="text/javascript" src="app\app.config.js"></script>
 	<script type="text/javascript" src="app\app.routes.js"></script>
+	<script type="text/javascript" src="app\Common\moment.js"></script>
+	<script type="text/javascript" src="app\Menu\menu.js"></script>
+	<script type="text/javascript" src="app\Calendar\calendar.js"></script>
 	<script type="text/javascript" src="app\Home\home.js"></script>
 
 </body>

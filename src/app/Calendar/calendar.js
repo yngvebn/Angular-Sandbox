@@ -1,5 +1,6 @@
 angular.module('sandbox').controller('Calendar', function(){
 	this.today = moment();
+	this.mode = 'month'
 
 	function getCurrentCalendarView(){
 		var returnArray = [];

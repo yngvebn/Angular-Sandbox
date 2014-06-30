@@ -8,7 +8,7 @@ angular.module('sandbox').constant('RouteTable', {
 	}, {
 		url: '/calendar',
 		name: 'Calendar',
-		templateUrl: 'views/calendar.html',
+		templateUrl: 'views/Calendar/calendar.html',
 		controllerAs: 'calendar',
 		controller: 'Calendar'
 	}]

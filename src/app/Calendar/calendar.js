@@ -1,4 +1,4 @@
-angular.module('sandbox').controller('Calendar', function(calendarService){
+angular.module('sandbox').controller('Calendar', function(){
 	this.today = moment();
 	this.mode = 'month'
 
@@ -14,7 +14,7 @@ angular.module('sandbox').controller('Calendar', function(calendarService){
 angular.module('sandbox').directive('calendar', function(){
 	return {
 		restrict: 'EA',
-		templateUrl: '/views/Calendar/calendar-directive.html',
+		templateUrl: 'views/Calendar/calendar-directive.html',
 		scope: {
 			displayMonth: '=',
 			displayYear: '=',

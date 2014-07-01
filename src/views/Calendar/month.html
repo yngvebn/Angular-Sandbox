@@ -7,7 +7,6 @@
 		<span ng-switch on="day.month() === displayMonth">
 			<span ng-switch-when="true">{{ day | format:'D' }}</span>
 			<span ng-switch-when="false">{{ day | format:'MMM D' }}</span>
-			{{ day.day() }}
 		</span>	
 		
 	</li>

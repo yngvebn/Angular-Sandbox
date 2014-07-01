@@ -1,12 +1,13 @@
 <ul class='calendar'>
-	<li class='calendar-item calendar-header' ng-repeat="day in calendar.days | limitTo:7  track by $index">{{ day | format:'ddd'}}</li>
+	<li class='calendar-item calendar-header' ng-repeat="day in days | limitTo:7  track by $index">{{ day | format:'ddd'}}</li>
 </ul>
 <ul class='calendar'>
-	<li class='calendar-day calendar-item' ng-repeat="day in calendar.days track by $index" 
-			ng-class="{'currentMonth' :  day.month() == calendar.today.month() }">
-		<span ng-switch on="day.month() === calendar.today.month()">
+	<li class='calendar-day calendar-item' ng-repeat="day in days track by $index" 
+			ng-class="{'currentMonth' :  day.month() == displayMonth, 'weekend': (day.day() === 0 || day.day() === 6) }">
+		<span ng-switch on="day.month() === displayMonth">
 			<span ng-switch-when="true">{{ day | format:'D' }}</span>
 			<span ng-switch-when="false">{{ day | format:'MMM D' }}</span>
+			{{ day.day() }}
 		</span>	
 		
 	</li>

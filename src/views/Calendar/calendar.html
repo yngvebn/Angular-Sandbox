@@ -1,3 +1,10 @@
-<h3><a ng-click="calendar.selectMonth(calendar.selectedDate.month()-1)">{{ moment(calendar.selectedDate).month()-1 | format:'MMMM' }}</a></h3> - <h2>{{calendar.today | format:'MMMM'}}</h2> -
-<h3><a ng-click="calendar.selectMonth(calendar.selectedDate.month()+1)">{{  moment(calendar.selectedDate).month()+1| format:'MMMM' }}</a></h3>
-<div ng-include="'views/Calendar/'+calendar.mode+'.html'"></div>
+
+<ul class="nav">
+	<li class="nav-item" ng-repeat='month in ["januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "desember"]'>
+		<a ng-click="calendar.setSelectedMonth(month)" href="">{{month}}</a>
+	</li>
+</ul>
+
+<h2>{{ moment().month(calendar.selectedMonth) | format:'MMMM'}}</h2> -
+
+<calendar display-month="calendar.selectedMonth" display-year="calendar.selectedYear" mode="calendar.mode"></calendar>

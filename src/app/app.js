@@ -1,1 +1,1 @@
-angular.module('sandbox', ['ngRoute']);
+angular.module('sandbox', ['ui.router', 'ngAnimate']);

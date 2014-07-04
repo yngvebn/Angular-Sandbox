@@ -1,30 +1,32 @@
-angular.module('sandbox').constant('RouteTable', {
-	routes: [{
-		url: '/',
-		name: 'Home',
-		templateUrl: 'views/home.html',
-		controllerAs: 'home',
-		controller: 'Home'
-	}, {
-		url: '/calendar',
-		name: 'Calendar',
-		templateUrl: 'views/Calendar/calendar.html',
-		controllerAs: 'calendar',
-		controller: 'Calendar'
-	}]
-});
+angular.module('sandbox').config(function($stateProvider, $urlRouterProvider){
 
-
-angular.module('sandbox').config(function($routeProvider, RouteTable){
-
-	for (var i = RouteTable.routes.length - 1; i >= 0; i--) {
-		var route = RouteTable.routes[i];
-		$routeProvider.when(route.url, route);
-	};
-
-
+	$stateProvider
+		.state('home', {
+			templateUrl: 'views/home.html',
+			controller: 'Home as home',
+			url: '/home'
+		})  /* Nested views under Home begins */
+			.state('home.main', { /* if a state called 'home' does not exist this will not work. The dot-syntax requires a parent*/
+				templateUrl: 'views/home.main.html',
+				controller: 'HomeMain as homeMain',
+				url: '.main' /* Not necessary, but required if you need deep-linking. URL will be '/#/home.main' */ 
+			})
+			.state('home.list', {
+				templateUrl: 'views/home.list.html',
+				controller: 'HomeList as homeList', /* The 'Controller as'-syntax is optional - http://toddmotto.com/digging-into-angulars-controller-as-syntax/  */
+				url: '.list'
+			})
+			.state('home.profile', {
+				templateUrl: 'views/home.profile.html',
+				controller: 'HomeProfile as homeList',
+				url: '.profile'
+			})
+			.state('home.about', {
+				templateUrl: 'views/home.about.html',
+				controller: 'HomeAbout as homeList',
+				url: '.about'
+			});
+			/* Nested views under Home ends */
 	
-	$routeProvider.otherwise({
-		redirectTo: '/'
-	});
+	$urlRouterProvider.otherwise('/home.main') /* For all unknown states, redirect to this */
 });

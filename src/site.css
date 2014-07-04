@@ -7,74 +7,53 @@ body{
 	font-size: 14px;
 }
 
-.nav{
-	list-style-type: none;
-	clear: right;
-	overflow: hidden;
-}
-
-.nav-item{
-	float: left;
-	margin-right: 15px;
+.nav-tabs li.active a, .nav-tabs li.active a:hover{
+	color: #fff;
+background-color: #428bca;
+border-color: #428bca;
 }
 
 
-.calendar {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-	overflow: hidden;
+/* Set up transition for the DOM element that will be animated */
+.tab-content{
+	position: absolute; /* To avoid 'jumping' elements*/
+ 	-webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out;
 }
 
-.calendar-item{
-	padding: 4px;
+/* This is the state of the content when it's first added to the DOM */
+.tab-content.ng-enter{
+  opacity: 0;
+  -webkit-transform:scale3d(0.5, 0.5, 0.5);
+  -moz-transform:scale3d(0.5, 0.5, 0.5);
+  transform:scale3d(0.5, 0.5, 0.5);
 }
 
-.calendar-header{
-	width: 14.2857%;
-	float: left;
+/* This is the state of the content when it's set to be removed from the DOM */
+.tab-content.ng-leave{
+ opacity: 1; 
+  -webkit-transform:translate3d(0, 0, 0);
+  -moz-transform:translate3d(0, 0, 0);
+  transform:translate3d(0, 0, 0);
 }
 
-.calendar-day{
-	opacity: 0.4;
-	height: 120px;
-	width: 14.2857%;
-	float: left;
-	background-color:#fefefe;
-	border-bottom: 1px solid #aaa;
-	border-right: 1px solid #aaa;	
-	cursor:pointer;
-
-    -webkit-transition: background-color 300ms linear;
-    -moz-transition: background-color 300ms linear;
-    -o-transition: background-color 300ms linear;
-    -ms-transition: background-color 300ms linear;
-    transition: background-color 300ms linear;
+/* This is the end-state of the content when its animation is done.
+	The Transition will go from ng-enter to ng-enter-active when the content is added */
+.tab-content.ng-enter-active{
+ opacity: 1;
+  -webkit-transform:scale3d(1, 1, 1);
+  -moz-transform:scale3d(1, 1, 1);
+  transform:scale3d(1, 1, 1);
 }
 
-.calendar-day:hover{
-	background-color:#f1f1f1;
-
-}
-.calendar-day:nth-child(1){
-	border-left: 1px solid #aaa;
-}
-
-.calendar-day:nth-child(-n+7){
-	border-top: 1px solid #aaa;
-}
-
-.calendar-day:nth-child(7n+1){
-	border-left: 1px solid #aaa;
-}
-
-
-
-.calendar-day.currentMonth{
-	opacity: 1;
-}
-
-
-.calendar-day.weekend{
-	background-color:#f1f1f1;
+/*  This is the end-state of the content when its animation is done.
+	The Transition will go from ng-leave to ng-leave-active when the content is added.
+	When this state is reached, the element is removed from the DOM */
+.tab-content.ng-leave-active{
+ opacity: 0;
+  -webkit-transform:translate3d(100px, 0, 0);
+  -moz-transform:translate3d(100px, 0, 0);
+  transform:translate3d(100px, 0, 0);
 }

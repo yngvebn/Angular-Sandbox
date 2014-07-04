@@ -1,12 +1,19 @@
-<div>Greeted with "Controller As"-syntax: {{ home.greeting }}</div>
+<ul class="nav nav-tabs" role="tablist">
+  <li ui-sref-active="active">
+        <a ui-sref=".main" role="tab" href="#">Home</a>
+  </li>
+  <!-- ui-sref-active looks for a ui-sref on the element or on its children, adding the class 'active' is the current state matches that of the found ui-sref -->
+  <li ui-sref-active="active"> 
+        <!-- since we're in a nested view, we don't need to specify home.profile. UI-route will attempt to find the nested view .profile on the current parent -->
+        <a ui-sref=".profile" role="tab" href="#">Profile</a>
+  </li>
+  <li ui-sref-active="active">
+        <a ui-sref=".list" role="tab" href="#">List</a>
+  </li>
+</ul>
 
-    	<select ng-model="search.section">
-            <option value="1">For Sale</option>
-            <option value="2">For Rent</option>
-        </select>
-        <select ng-model="home.minPrice" ng-options="price.value for price in home.price_filters | filter:search:strict">
-            <option>Min Price</option>
-        </select>
-        <select  ng-model="home.maxPrice" ng-options="price.value for price in home.price_filters | filter:search:strict">
-            <option>Max Price</option>
-        </select>
+<!-- With regular routing, this would not work, but with ui-route we can have a ui-view directive in our child-templates aswell as on the index.html -->
+<div class="tab-content" ui-view></div>
+
+<a style="position: fixed; bottom: 10px" href="http://www.vg.no">Click me!</a>
+

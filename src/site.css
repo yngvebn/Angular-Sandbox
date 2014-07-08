@@ -45,7 +45,7 @@ box-shadow:         1px 1px 3px 0px rgba(50, 50, 50, 0.39);
 
 /* Set up transition for the DOM element that will be animated */
 .tab-content{
-
+overflow: hidden;
  left: 1rem;
  right: 1rem;
 top: auto;

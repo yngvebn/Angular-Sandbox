@@ -5,22 +5,58 @@
 body{
 	font-family: helvetica;
 	font-size: 14px;
+  color: #333;
+  margin: 3em 1em 0 1em;
+  background: #eaeaea;
+}
+
+.main-view{
+  position: relative;
+  margin-top: 4rem;
 }
 
 .nav-tabs li.active a, .nav-tabs li.active a:hover{
 	color: #fff;
 background-color: #428bca;
 border-color: #428bca;
+
+}
+
+.app-bar{
+  background-color: #3f51b5;
+  color: rgba(255, 255, 255, 0.87);
+  height: 3em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  line-height: 3em;
+  padding: 0 1em;
+  font-size: 1.3em;
+}
+
+.level-one-paper{
+-webkit-box-shadow: 1px 1px 3px 0px rgba(50, 50, 50, 0.39);
+-moz-box-shadow:    1px 1px 3px 0px rgba(50, 50, 50, 0.39);
+box-shadow:         1px 1px 3px 0px rgba(50, 50, 50, 0.39);
 }
 
 
 /* Set up transition for the DOM element that will be animated */
 .tab-content{
+
+ left: 1rem;
+ right: 1rem;
+top: auto;
+  padding: 2rem;
+  
 	position: absolute; /* To avoid 'jumping' elements*/
  	-webkit-transition:all .5s ease-in-out;
     -moz-transition:all .5s ease-in-out;
     -o-transition:all .5s ease-in-out;
     transition:all .5s ease-in-out;
+    background: white;
 }
 
 /* This is the state of the content when it's first added to the DOM */
@@ -56,4 +92,34 @@ border-color: #428bca;
   -webkit-transform:translate3d(100px, 0, 0);
   -moz-transform:translate3d(100px, 0, 0);
   transform:translate3d(100px, 0, 0);
+}
+.control-group{
+  width: 100%;
+}
+
+.control-group .form-control-label{
+  display: block;
+  margin-bottom: 4px;
+  color: #888;
+}
+
+.control-group .form-control{
+  width: 100%;
+  border-width: 0 0 1px 0;
+  border-color: #ccc;
+  font-size: 14pt;
+  line-height: 20pt;
+  padding: 4px 0;
+
+    -webkit-transition:all .2s ease-in-out;
+    -moz-transition:all .2s ease-in-out;
+    -o-transition:all .2s ease-in-out;
+    transition:all .2s ease-in-out;
+}
+
+.control-group .form-control:focus{
+  outline: none;
+  border-width: 0 0 1px 0;
+
+border-color: #555;
 }

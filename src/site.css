@@ -9,8 +9,36 @@ body{
   color: #333;
   margin: 3em 16px 0 16px;
   background: #eaeaea;
+  overflow: hidden;
 }
 
+.background-image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.content .menu{
+  position: absolute;
+  right: 16%;
+  top: 16%;
+
+}
+
+h1{
+  font-size: 3em;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+  color: #efefef;
+}
 
 .main-view{
   position: relative;
@@ -117,6 +145,31 @@ top: auto;
     -moz-transition:all .2s ease-in-out;
     -o-transition:all .2s ease-in-out;
     transition:all .2s ease-in-out;
+}
+
+.sr-only{
+  visibility: hidden;
+  font-size:0;
+  display: inline;
+}
+
+[placeholder]::-webkit-input-placeholder {
+    transition:all .3s cubic-bezier(.02,.92,.27,.97);
+    font-size: 0.8em;
+}
+
+.control-group .form-control:focus::-webkit-input-placeholder {
+  transform: translateY(-1.7em);
+
+}
+
+.control-group .form-control:focus:-moz-placeholder { /* Firefox 18- */
+}
+
+.control-group .form-control:focus::-moz-placeholder {  /* Firefox 19+ */
+}
+
+.control-group .form-control:focus:-ms-input-placeholder {  
 }
 
 .control-group .form-control:focus{
